@@ -40,6 +40,9 @@ function InputList() {
 
 const StForm = styled.form`
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     & input {
         margin: 10px;

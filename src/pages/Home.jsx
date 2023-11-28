@@ -38,6 +38,10 @@ const InputPart = styled.div`
 const ContentPart = styled.div`
     padding: 10px;
     border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 export default Home;

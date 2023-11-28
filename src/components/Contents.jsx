@@ -55,6 +55,7 @@ function Contents({ isDone }) {
 
 const TitleDiv = styled.div`
     width: 500px;
+
     h2 {
         font-size: 20px;
         font-weight: 700;
