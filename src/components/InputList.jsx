@@ -15,6 +15,10 @@ function InputList() {
             <StForm
                 onSubmit={(event) => {
                     event.preventDefault();
+                    if (title === '' || content === '') {
+                        alert('제목과 내용 모두 작성하셔야합니다.');
+                        return;
+                    }
 
                     const newData = {
                         id: shortid(),
@@ -22,6 +26,7 @@ function InputList() {
                         content,
                         isDone: false,
                     };
+
                     dispatch(addTodo(newData));
                 }}
             >
@@ -38,6 +43,9 @@ const StForm = styled.form`
     gap: 10px;
     & input {
         margin: 10px;
+    }
+    & input {
+        width: 200px;
     }
 `;
 

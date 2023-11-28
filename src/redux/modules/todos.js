@@ -23,13 +23,13 @@ const initialState = [
     {
         id: shortid(),
         title: '할일제목1',
-        contents: '리덕스1',
+        content: '리덕스1',
         isDone: false,
     },
     {
         id: shortid(),
         title: '할일제목1',
-        contents: '점심2',
+        content: '점심2',
         isDone: true,
     },
 ];
@@ -38,6 +38,7 @@ const initialState = [
 const todos = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TODO:
+            console.log(action.payload);
             return [action.payload, ...state];
 
         case DELETE_TODO: //action.payload= 선택된 id
