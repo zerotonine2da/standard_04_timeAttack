@@ -10,8 +10,6 @@ function Home() {
             </InputPart>
             <ContentPart>
                 <Contents isDone={false} />
-            </ContentPart>
-            <ContentPart>
                 <Contents isDone={true} />
             </ContentPart>
         </div>

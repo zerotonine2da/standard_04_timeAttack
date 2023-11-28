@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import shortid from 'shortid';
 import { addTodo } from '../redux/modules/todos';
+import styled from 'styled-components';
+
 function InputList() {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
-    //데이터 가져오기
-    //const todos = useSelector((state) => state.todos);
     const dispatch = useDispatch();
 
     return (
         <div>
-            <form
+            <StForm
                 onSubmit={(event) => {
                     event.preventDefault();
 
@@ -25,12 +25,20 @@ function InputList() {
                     dispatch(addTodo(newData));
                 }}
             >
-                <input value={title} onChange={(event) => setTitle(event.target.value)}></input>
-                <input value={content} onChange={(event) => setContent(event.target.value)}></input>
-                <button type="submit">등록하기</button>
-            </form>
+                제목 : <input value={title} onChange={(event) => setTitle(event.target.value)}></input>
+                내용 : <input value={content} onChange={(event) => setContent(event.target.value)}></input>
+                <button type="submit">등록</button>
+            </StForm>
         </div>
     );
 }
+
+const StForm = styled.form`
+    padding: 10px;
+    gap: 10px;
+    & input {
+        margin: 10px;
+    }
+`;
 
 export default InputList;
